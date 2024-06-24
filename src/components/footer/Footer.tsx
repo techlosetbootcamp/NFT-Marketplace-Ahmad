@@ -6,7 +6,7 @@ import envelope from "../../assets/icons/envelope.png";
 
 const Footer: React.FC = () => {
   return (
-    <div className=" w-full px-4 py-8 bg-[#101010]">
+    <div className=" w-full h-full z-10 px-4 py-8 bg-[#101010]">
       <div className="flex flex-col md:flex-row md:items-start md:gap-4 md:justify-between">
         <div className="mb-6 md:mb-0 md:w-1/3">
           <img src={logo} alt="logo" className="w-[200px]" />
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             <li className="py-2">
               Get exclusive promotions & updates straight to your inbox.
             </li>
-            <li className="my-2 py-1 text-center bg-white w-full rounded-xl">
+            <li className="my-2 py-2 text-center bg-white w-full rounded-xl">
               Enter your email
             </li>
             <li className="py-2">

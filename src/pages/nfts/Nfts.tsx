@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { fetchCollections } from "../../redux/features/CollectionsSlice";
 import { fetchSingleCollection } from "../../redux/features/nftDetailSlice";
 import Loader from "../../components/loader/Loader";
-
+import LoaderImage from "../../assets/images/image.png";
 const Nfts = () => {
   const { slug } = useParams<{ slug: string }>();
 
@@ -49,7 +49,7 @@ const Nfts = () => {
   }
   if (isLoading) {
     return (
-      <div>
+      <div className="h-full">
         <Loader />
       </div>
     );
@@ -71,7 +71,7 @@ const Nfts = () => {
             className=" rounded-3xl overflow-hidden w-64 m-4 bg-[#222222]"
           >
             <img
-              src={nft.display_image_url}
+              src={nft.display_image_url || LoaderImage}
               alt={nft.name}
               className="object-center object-cover w-full h-60"
             />

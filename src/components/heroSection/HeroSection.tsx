@@ -6,7 +6,7 @@ import Button from "../../components/button/Button";
 import Loader from "../loader/Loader";
 import { Link } from "react-router-dom";
 import rocket from "../../assets/icons/RocketLaunch.png";
-
+import LoaderImage from "../../assets/images/image.png";
 const HeroSection = () => {
   const dispatch: AppDispatch = useDispatch();
   const { collections, isLoading, isError } = useSelector(
@@ -60,7 +60,7 @@ const HeroSection = () => {
           <div className="bg-[#3B3B3B] w-fit rounded-3xl">
             <div className="pb-4 h-1/3">
               <img
-                src={collection.image_url || "default_image_url"}
+                src={collection.image_url || LoaderImage}
                 alt="placeholder img"
                 className="rounded-t-3xl w-[400px]"
               />

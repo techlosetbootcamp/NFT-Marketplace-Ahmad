@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchDetailsNFT } from "../../redux/features/DetailPageSlice";
 import Loader from "../../components/loader/Loader";
+import LoaderImage from "../../assets/images/image.png";
 const NftDetails = () => {
   const dispatch: AppDispatch = useDispatch();
 
@@ -29,7 +30,7 @@ const NftDetails = () => {
 
   if (isLoading) {
     return (
-      <div>
+      <div className="h-full">
         <Loader />
       </div>
     );
@@ -42,7 +43,7 @@ const NftDetails = () => {
     <div className="flex my-12   flex-wrap mt-28 items-center justify-between gap-10 mx-12 text-white">
       <div className="w-2/5 flex justify-center items-center below-lg:w-full ">
         <img
-          src={nft?.display_image_url}
+          src={nft?.display_image_url || LoaderImage}
           className="object-top border-2 p-4 border-[#101010] rounded-3xl object-cover  max-h-full"
           alt=""
         />
