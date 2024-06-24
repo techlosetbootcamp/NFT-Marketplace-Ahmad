@@ -64,6 +64,7 @@ const HeroSection = () => {
                 alt="placeholder img"
                 className="rounded-t-3xl w-[400px]"
               />
+
               <div className="px-4 py-4">
                 <h1 className="text-white font-semibold text-xl">
                   {collection.name}
