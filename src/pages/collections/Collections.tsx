@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCollections } from "../../redux/features/CollectionsSlice";
 import { Link } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
-
+import LoaderImage from "../../assets/images/image.png";
 import { IoEyeSharp } from "react-icons/io5";
 
 const Collections = () => {
@@ -52,7 +52,7 @@ const Collections = () => {
           {displayedCollections.map((collection, index) => (
             <div key={index} className="overflow-hidden w-64 m-4">
               <img
-                src={collection.image_url}
+                src={collection.image_url || LoaderImage}
                 alt={collection.name}
                 className="object-center object-cover rounded-3xl w-full h-64"
               />

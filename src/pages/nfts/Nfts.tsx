@@ -66,7 +66,10 @@ const Nfts = () => {
       </div>
       <div className="flex justify-center items-center gap-4 flex-wrap">
         {displayedNfts.map((nft, index) => (
-          <div
+          <Link
+            to={`/nft/${contractChain(nft.contract)}/${nft.contract}/${
+              nft.identifier
+            }`}
             key={index}
             className=" rounded-3xl overflow-hidden w-64 m-4 bg-[#222222]"
           >
@@ -81,16 +84,8 @@ const Nfts = () => {
               </p>
               <p className="text-sm text-white py-1">{nft.collection}</p>
               <p className="text-sm text-gray-500">{nft.identifier}</p>
-              <Link
-                to={`/nft/${contractChain(nft.contract)}/${nft.contract}/${
-                  nft.identifier
-                }`}
-                className="text-[#975DE7] mt-3 text-sm hover:underline"
-              >
-                View Details
-              </Link>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="flex items-center justify-center">

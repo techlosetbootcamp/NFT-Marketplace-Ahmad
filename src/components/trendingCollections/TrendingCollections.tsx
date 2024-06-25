@@ -49,7 +49,11 @@ const Collections = () => {
       <div className="flex flex-col items-center">
         <div className="flex justify-center items-center gap-4 flex-wrap">
           {displayedCollections.map((collection, index) => (
-            <div key={index} className="overflow-hidden w-64 m-4">
+            <Link
+              to={`/collection/${collection.collection}`}
+              key={index}
+              className="overflow-hidden w-64 m-4"
+            >
               <img
                 src={collection.image_url || LoaderImage}
                 alt={collection.name}
@@ -59,14 +63,11 @@ const Collections = () => {
                 <h1 className="text-xl text-white font-semibold mb-2">
                   {collection.name}
                 </h1>
-                <Link
-                  to={`/collection/${collection.collection}`}
-                  className="text-[#975DE7] text-sm hover:underline"
-                >
+                <span className="text-[#975DE7] text-sm hover:underline">
                   View Collection
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         {visibleCollections < collections.length && (
