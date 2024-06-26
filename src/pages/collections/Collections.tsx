@@ -62,7 +62,7 @@ const Collections = () => {
                 </h1>
                 <Link
                   to={`/collection/${collection.collection}`}
-                  className="text-[#975DE7] text-sm hover:underline"
+                  className="text-primary-btn-color text-sm hover:underline"
                 >
                   View Collection
                 </Link>
@@ -82,7 +82,7 @@ const Collections = () => {
            gap-2
            lg:text-base
            max-sm:text-[12px]
-           bg-[#975DE7]
+           bg-primary-btn-color
            font-semibold
            text-white
            my-8

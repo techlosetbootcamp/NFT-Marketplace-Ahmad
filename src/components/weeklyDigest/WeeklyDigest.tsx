@@ -3,7 +3,7 @@ import Envelope from "../../assets/icons/envelope.png";
 import Button from "../button/Button";
 const WeeklyDigest = () => {
   return (
-    <div className="bg-[#3B3B3B] py-10 rounded-3xl px-12 flex flex-col sm:flex-row justify-around gap-4 items-center">
+    <div className="bg-secondry-bg-color py-10 rounded-3xl px-12 flex flex-col sm:flex-row justify-around gap-4 items-center">
       <div>
         <img src={Digest} alt="Digest" width={500} className="rounded-3xl " />
       </div>

@@ -6,11 +6,11 @@ import envelope from "../../assets/icons/envelope.png";
 
 const Footer: React.FC = () => {
   return (
-    <div className=" w-full h-full z-10 px-4 py-8 bg-[#101010]">
+    <div className=" w-full h-full z-10 px-4 py-8 bg-dark-bg-color">
       <div className="flex flex-col md:flex-row md:items-start md:gap-4 md:justify-between">
         <div className="mb-6 md:mb-0 md:w-1/3">
           <img src={logo} alt="logo" className="w-[200px]" />
-          <ul className="py-4 text-[#a2a2a2]">
+          <ul className="py-4 text-light">
             <li className="py-2">
               NFT marketplace fetched API's of Opensea and show on here
             </li>
@@ -25,8 +25,8 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="mb-6 md:mb-0 md:w-1/3">
-          <h1 className="text-[#ffffff] font-semibold text-[22px]">Explore</h1>
-          <ul className="py-4 text-[#a2a2a2]">
+          <h1 className="text-white font-semibold text-[22px]">Explore</h1>
+          <ul className="py-4 text-light">
             <li className="py-2">Marketplace</li>
             <li className="py-2">Rankings</li>
             <li className="py-2">Connect a wallet</li>
@@ -34,10 +34,10 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="md:w-1/3">
-          <h1 className="text-[#ffffff] font-semibold text-[22px]">
+          <h1 className="text-white font-semibold text-[22px]">
             Join our weekly digest
           </h1>
-          <ul className="py-4 text-[#a2a2a2]">
+          <ul className="py-4 text-light">
             <li className="py-2">
               Get exclusive promotions & updates straight to your inbox.
             </li>
@@ -56,8 +56,8 @@ const Footer: React.FC = () => {
           </ul>
         </div>
       </div>
-      <div className="w-full border-t border-[#ffffff] rounded-full mt-6" />
-      <div className="mt-4 text-[#a2a2a2] text-center">
+      <div className="w-full border-t border-white rounded-full mt-6" />
+      <div className="mt-4 text-light text-center">
         &copy; Techloset Coding Bootcamp 6.O Created by Ahmad Raza
       </div>
     </div>

@@ -71,7 +71,7 @@ const Nfts = () => {
               nft.identifier
             }`}
             key={index}
-            className=" rounded-3xl overflow-hidden w-64 m-4 bg-[#222222]"
+            className=" rounded-3xl overflow-hidden w-64 m-4 bg-secondry-bg-color"
           >
             <img
               src={nft.display_image_url || LoaderImage}
@@ -92,7 +92,7 @@ const Nfts = () => {
         {visibleCollections < nfts.length && (
           <button
             onClick={handleShowMore}
-            className="px-6 py-2 rounded-[12px] flex justify-center items-center gap-2 lg:text-base max-sm:text-[12px] bg-[#975DE7] font-semibold text-white my-8"
+            className="px-6 py-2 rounded-[12px] flex justify-center items-center gap-2 lg:text-base max-sm:text-[12px] bg-primary-btn-color font-semibold text-white my-8"
           >
             Show More
           </button>

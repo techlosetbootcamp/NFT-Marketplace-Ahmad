@@ -60,7 +60,7 @@ const HeroSection = () => {
           to={`/collection/${collection.collection || "/"}`}
           className="mt-4 sm:w-[50%] flex justify-center"
         >
-          <div className="bg-[#3B3B3B] w-fit rounded-3xl">
+          <div className="bg-secondry-bg-color w-fit rounded-3xl">
             <div className="pb-4 h-1/3">
               <img
                 src={collection.image_url || LoaderImage}
@@ -73,7 +73,7 @@ const HeroSection = () => {
                   {collection.name}
                 </h1>
                 <div className="flex items-center gap-4 py-2">
-                  <span className="text-[#975DE7] text-sm hover:underline">
+                  <span className="text-primary-btn-color text-sm hover:underline">
                     View Collection
                   </span>
                 </div>

@@ -40,12 +40,12 @@ const Button: React.FC<ButtonProps> = ({
            lg:text-base
            max-sm:text-[12px]
            cursor-not-allowed
-          ${bgPurple ? "bg-[#975DE7]" : ""}
+          ${bgPurple ? "bg-primary-btn-color" : ""}
           ${widthFull ? "w-full" : ""}
           ${widthFit ? "w-fit" : ""}
           ${bgTransparent ? "bg-transparent" : ""}
           ${bgWhite ? "bg-white" : ""}
-          ${border ? "border-2 border-[#975DE7]" : ""}
+          ${border ? "border-2 border-primary-btn-color" : ""}
 `;
   const textClasses = `
     ${textBlack ? "text-black" : "text-white"}

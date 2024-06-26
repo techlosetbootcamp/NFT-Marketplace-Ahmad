@@ -63,7 +63,7 @@ const Collections = () => {
                 <h1 className="text-xl text-white font-semibold mb-2">
                   {collection.name}
                 </h1>
-                <span className="text-[#975DE7] text-sm hover:underline">
+                <span className="text-primary-btn-color text-sm hover:underline">
                   View Collection
                 </span>
               </div>
@@ -82,7 +82,7 @@ const Collections = () => {
            gap-2
            lg:text-base
            max-sm:text-[12px]
-           bg-[#975DE7]
+           bg-primary-btn-color
            font-semibold
            text-white
            my-8

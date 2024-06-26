@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed z-[100] w-full top-0 bg-[#2B2B2B] shadow-lg">
+      <div className="fixed z-[100] w-full top-0 bg-primary-bg-color shadow-lg">
         <div className=" px-3 py-4 flex items-center justify-between ">
           <div>
             <Link to={"/"}>
@@ -54,8 +54,8 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "fixed md:hidden  top-0 left-0 bg-[#101010] w-[70%] h-screen duration-1000 z-20"
-              : "fixed md:hidden z-[100] top-0 left-[-100%] bg-[#101010] w-[70%] h-screen duration-1000"
+              ? "fixed md:hidden  top-0 left-0 bg-dark-bg-color w-[70%] h-screen duration-1000 z-20"
+              : "fixed md:hidden z-[100] top-0 left-[-100%] bg-dark-bg-color w-[70%] h-screen duration-1000"
           }
         >
           <div className=" px-4 py-2 h-screen">

@@ -12,7 +12,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
   description,
 }) => {
   return (
-    <div className="bg-[#3B3B3B] text-center sm:w-[300px] w-full rounded-2xl flex items-center flex-row sm:flex-col my-4 gap-4 p-4 ">
+    <div className="bg-secondry-bg-color text-center sm:w-[300px] w-full rounded-2xl flex items-center flex-row sm:flex-col my-4 gap-4 p-4 ">
       <img src={src} alt={alt} className="w-24 sm:w-full" />
       <h1 className="sm:text-2xl text-xl font-semibold text-white pb-2">
         {title}

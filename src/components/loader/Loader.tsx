@@ -10,7 +10,7 @@ const Loader = () => {
     };
   }, []);
   return (
-    <div className="absolute z-[900] inset-0 h-[100vh] w-full flex justify-center items-center bg-[#101010]">
+    <div className="absolute z-[900] inset-0 h-screen w-full flex justify-center items-center bg-dark-bg-color">
       <ThreeCircles
         visible={true}
         height="100"
