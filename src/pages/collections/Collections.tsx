@@ -1,22 +1,17 @@
-import { useEffect, useState } from "react";
-import { AppDispatch, RootState } from "../../redux/store";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCollections } from "../../redux/features/CollectionsSlice";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { IoEyeSharp } from "react-icons/io5";
 import Loader from "../../components/loader/Loader";
 import LoaderImage from "../../assets/images/image.png";
-import { IoEyeSharp } from "react-icons/io5";
+import { useFetchCollections, useCollectionsState } from "./UseCollections";
 
 const Collections = () => {
-  const dispatch: AppDispatch = useDispatch();
-  const state = useSelector((state: RootState) => state);
+  const { collections, isLoading, isError } = useCollectionsState();
   const [visibleCollections, setVisibleCollections] = useState(8);
 
-  useEffect(() => {
-    dispatch(fetchCollections());
-  }, [dispatch]);
+  useFetchCollections();
 
-  if (state.collections.isLoading) {
+  if (isLoading) {
     return (
       <div>
         <Loader />
@@ -24,7 +19,7 @@ const Collections = () => {
     );
   }
 
-  if (state.collections.isError) {
+  if (isError) {
     return <div>Error</div>;
   }
 
@@ -32,10 +27,7 @@ const Collections = () => {
     setVisibleCollections(visibleCollections + 8);
   };
 
-  const displayedCollections = state.collections.collections.slice(
-    0,
-    visibleCollections
-  );
+  const displayedCollections = collections?.slice(0, visibleCollections) || [];
 
   return (
     <div className="mt-28">
@@ -52,16 +44,16 @@ const Collections = () => {
           {displayedCollections.map((collection, index) => (
             <div key={index} className="overflow-hidden w-64 m-4">
               <img
-                src={collection.image_url || LoaderImage}
-                alt={collection.name}
+                src={collection?.image_url || LoaderImage}
+                alt={collection?.name}
                 className="object-center object-cover rounded-3xl w-full h-64"
               />
               <div className="p-4">
                 <h1 className="text-xl text-white font-semibold mb-2">
-                  {collection.name}
+                  {collection?.name}
                 </h1>
                 <Link
-                  to={`/collection/${collection.collection}`}
+                  to={`/collection/${collection?.collection}`}
                   className="text-primary-btn-color text-sm hover:underline"
                 >
                   View Collection
@@ -70,7 +62,7 @@ const Collections = () => {
             </div>
           ))}
         </div>
-        {visibleCollections < state.collections.collections.length && (
+        {visibleCollections < collections?.length && (
           <button
             onClick={handleShowMore}
             className=" px-6

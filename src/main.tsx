@@ -7,7 +7,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Layout from "./layout";
+import Layout from "../layout/layout";
 import Home from "./pages/home/Home";
 import Collections from "./pages/collections/Collections";
 import { Provider } from "react-redux";

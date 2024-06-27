@@ -1,13 +1,5 @@
-interface CategorieCardProps {
-  img: string;
-  imgAlt: string;
-  title: string;
-}
-const CategorieCard: React.FC<CategorieCardProps> = ({
-  img,
-  title,
-  imgAlt,
-}) => {
+import { CategoryCardProps } from "../../types/Types";
+const CategoryCard: React.FC<CategoryCardProps> = ({ img, title, imgAlt }) => {
   return (
     <div className=" rounded-3xl mx-auto bg-secondry-bg-color">
       <img src={img} alt={imgAlt} />
@@ -16,4 +8,4 @@ const CategorieCard: React.FC<CategorieCardProps> = ({
   );
 };
 
-export default CategorieCard;
+export default CategoryCard;

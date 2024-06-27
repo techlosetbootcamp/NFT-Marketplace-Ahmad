@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store";
-import { fetchCollections } from "../../redux/features/CollectionsSlice";
+import { fetchCollections } from "../../redux/slices/CollectionsSlice";
 import Button from "../../components/button/Button";
 import Loader from "../loader/Loader";
 import { Link } from "react-router-dom";

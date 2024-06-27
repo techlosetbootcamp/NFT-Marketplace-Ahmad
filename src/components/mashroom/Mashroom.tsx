@@ -30,7 +30,7 @@ function Mashroom() {
   return (
     <div className=" relative overflow-hidden h-[70vh] lg:h-[70vh] w-full">
       <div
-        className="absolute inset-0 bg-fixed bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
             "url('https://s3-alpha-sig.figma.com/img/a6f4/3f93/50c73503d13e1fe1a0e3277804ef1192?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PeOfPlmge9TDczonIcNgF~3sIPDAKABuZbYyK2oVEIsNBpFXxnyM4b-LueJQiAUfH8hIwrKXfSB-Qa14-QkwV-ArFvT90G3nLCUh0zYPcICpONz7Bs4zFSQQl6c8Izgkyto5Zell~-Cmaw7r4Aiqj-OOQ276OHn55j2s4p2IIfJJ-6052adAkLTYfa5khwAEExGApu~ymnB5rQY47Yo7gQV676nAV1hB3lh4Sju6kTwLeJZOfUs0cGmEdTTAorsGdTfaMjpClLrddFWnN0K38Vuarnsk0zwvWLZ4t1N-9FoNlj-SrznS5oVbq07v4aCauCKn~5LRN4-Ckd9V60hHDA__')",

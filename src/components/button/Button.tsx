@@ -1,19 +1,4 @@
-import { IconType } from "react-icons";
-
-interface ButtonProps {
-  img?: string;
-  imgAlt?: string;
-  icon?: IconType;
-  text: string;
-  bgPurple?: boolean;
-  bgWhite?: boolean;
-  border?: boolean;
-  textBlack?: boolean;
-  bgTransparent?: boolean;
-  widthFull?: boolean;
-  widthFit?: boolean;
-  onClick?: () => void;
-}
+import { ButtonProps } from "../../types/Types";
 
 const Button: React.FC<ButtonProps> = ({
   img: src,

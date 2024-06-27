@@ -1,40 +1,18 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axiosInstance from "../../axiosInstance";
-
-interface NFTProps {
-  chain: string;
-  address: string;
-  identifier: string;
-  description: string | null;
-  image_url: string;
-  collection: string;
-  contract: string;
-  creator: string;
-  display_image_url: string;
-  display_animation_url: string | null;
-  metadata_url: string;
-  name: string | null;
-  opensea_url: string;
-  token_standard: string;
-  updated_at: string;
-}
+import axiosInstance, { BASE_URL } from "../../axiosInstance";
+import { NFTProps, initialStateProps } from "../../types/Types";
 
 export const fetchDetailsNFT = createAsyncThunk<
   NFTProps,
   { chain: string; address: string; id: string }
 >("DetailsNfts", async ({ chain, address, id }) => {
   const response = await axiosInstance.get(
-    `https://api.opensea.io/api/v2/chain/${chain}/contract/${address}/nfts/${id}`
+    `${BASE_URL}/chain/${chain}/contract/${address}/nfts/${id}`
   );
 
   return response.data.nft;
 });
 
-interface initialStateProps {
-  nft: NFTProps | null;
-  isLoading: boolean;
-  isError: boolean;
-}
 const initialState: initialStateProps = {
   nft: null,
   isError: false,

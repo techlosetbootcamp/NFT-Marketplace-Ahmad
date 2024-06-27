@@ -2,28 +2,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { fetchCollections } from "../../redux/features/CollectionsSlice";
-import { fetchSingleCollection } from "../../redux/features/nftDetailSlice";
+import { fetchCollections } from "../../redux/slices/CollectionsSlice";
 import Loader from "../../components/loader/Loader";
 import LoaderImage from "../../assets/images/image.png";
+import { useFetchNfts, useNftsState } from "./UseNfts";
 const Nfts = () => {
   const { slug } = useParams<{ slug: string }>();
 
   const dispatch: AppDispatch = useDispatch();
 
-  const { nfts, isError, isLoading } = useSelector(
-    (state: RootState) => state.singleCollection
-  );
+  const { isError, isLoading, nfts } = useNftsState();
 
   const { collections } = useSelector((state: RootState) => state.collections);
 
   const [visibleCollections, setVisibleCollections] = useState(8);
 
-  useEffect(() => {
-    if (slug) {
-      dispatch(fetchSingleCollection(slug));
-    }
-  }, [dispatch, slug]);
+  useFetchNfts(slug || "");
 
   useEffect(() => {
     dispatch(fetchCollections());
@@ -55,7 +49,7 @@ const Nfts = () => {
     );
   }
 
-  const displayedNfts = nfts.slice(0, visibleCollections);
+  const displayedNfts = nfts?.slice(0, visibleCollections);
 
   return (
     <div className="mt-28">
@@ -65,7 +59,7 @@ const Nfts = () => {
         </h1>
       </div>
       <div className="flex justify-center items-center gap-4 flex-wrap">
-        {displayedNfts.map((nft, index) => (
+        {displayedNfts?.map((nft, index) => (
           <Link
             to={`/nft/${contractChain(nft.contract)}/${nft.contract}/${
               nft.identifier
@@ -89,7 +83,7 @@ const Nfts = () => {
         ))}
       </div>
       <div className="flex items-center justify-center">
-        {visibleCollections < nfts.length && (
+        {visibleCollections && nfts && visibleCollections < nfts.length && (
           <button
             onClick={handleShowMore}
             className="px-6 py-2 rounded-[12px] flex justify-center items-center gap-2 lg:text-base max-sm:text-[12px] bg-primary-btn-color font-semibold text-white my-8"

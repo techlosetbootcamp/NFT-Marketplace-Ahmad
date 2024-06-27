@@ -1,32 +1,18 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axiosInstance from "../../axiosInstance";
-
-interface NFT {
-  identifier: string;
-  display_image_url: string;
-  name: string;
-  description: string;
-  collection: string;
-  contract: string;
-}
+import axiosInstance, { BASE_URL } from "../../axiosInstance";
+import { NFT, initialStatePropsNFTDetailSlice } from "../../types/Types";
 
 export const fetchSingleCollection = createAsyncThunk<NFT[], string>(
   "singleCollecton",
   async (slug) => {
     const response = await axiosInstance.get(
-      `https://api.opensea.io/api/v2/collection/${slug}/nfts`
+      `${BASE_URL}/collection/${slug}/nfts`
     );
     return response.data.nfts;
   }
 );
 
-interface initialStateProps {
-  nfts: NFT[];
-  isLoading: boolean;
-  isError: boolean;
-}
-
-const initialState: initialStateProps = {
+const initialState: initialStatePropsNFTDetailSlice = {
   nfts: [],
   isError: false,
   isLoading: true,

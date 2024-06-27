@@ -1,9 +1,4 @@
-interface WorkCardProps {
-  src: string;
-  alt: string;
-  title: string;
-  description: string;
-}
+import { WorkCardProps } from "../../types/Types";
 
 const WorkCard: React.FC<WorkCardProps> = ({
   src,

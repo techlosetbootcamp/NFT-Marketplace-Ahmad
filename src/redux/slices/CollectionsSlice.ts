@@ -1,24 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axiosInstance from "../../axiosInstance";
-interface contractsProps {
-  address: string;
-  chain: string;
-}
-
-interface Collections {
-  created_date: string;
-  collection: string;
-  image_url: string;
-  name: string;
-  description: string;
-  contracts: contractsProps[];
-}
+import { BASE_URL } from "../../axiosInstance";
+import { Collections, collectionSliceProps } from "../../types/Types";
 
 export const fetchCollections = createAsyncThunk<Collections[]>(
   "collections/fetchCollections",
   async () => {
     const response = await axiosInstance.get(
-      "https://api.opensea.io/api/v2/collections?order_by=seven_day_volume&order_direction=desc"
+      `${BASE_URL}/collections?order_by=seven_day_volume&order_direction=desc`
     );
     return response.data.collections.sort(
       (a: Collections, b: Collections) =>
@@ -27,11 +16,6 @@ export const fetchCollections = createAsyncThunk<Collections[]>(
   }
 );
 
-interface collectionSliceProps {
-  collections: Collections[];
-  isLoading: boolean;
-  isError: boolean;
-}
 const initialState: collectionSliceProps = {
   collections: [],
   isError: false,

@@ -1,4 +1,4 @@
-import WorkCard from "./workcard/WorkCard";
+import WorkCard from "../workcard/WorkCard";
 import Wallet from "../../assets/images/wallet.png";
 import Collection from "../../assets/images/collection.png";
 import Earning from "../../assets/images/earning.png";
