@@ -101,7 +101,7 @@ const NftDetails = () => {
         </div>
         <div className="mt-2 flex flex-wrap justify-between">
           <span className="text-white">Last Updated:</span>
-          <span className="">{nft?.updated_at.slice(0, 15)}....</span>
+          <span>{nft?.updated_at.slice(0, 15)}....</span>
         </div>
       </div>
     </div>
