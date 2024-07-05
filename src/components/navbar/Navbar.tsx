@@ -49,8 +49,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* =========== for responsiveness */}
-
         <div
           className={
             nav

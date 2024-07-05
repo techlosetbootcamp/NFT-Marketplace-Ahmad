@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { IoEyeSharp } from "react-icons/io5";
 import Loader from "../../components/loader/Loader";
 import LoaderImage from "../../assets/images/image.png";
-import { useFetchCollections, useCollectionsState } from "./UseCollections";
+import { useFetchCollections, useCollectionsState } from "./useCollections";
 
 const Collections = () => {
   const { collections, isLoading, isError } = useCollectionsState();

@@ -5,7 +5,8 @@ import { Link, useParams } from "react-router-dom";
 import { fetchCollections } from "../../redux/slices/CollectionsSlice";
 import Loader from "../../components/loader/Loader";
 import LoaderImage from "../../assets/images/image.png";
-import { useFetchNfts, useNftsState } from "./UseNfts";
+import { useFetchNfts, useNftsState } from "./useNfts";
+
 const Nfts = () => {
   const { slug } = useParams<{ slug: string }>();
 
@@ -13,7 +14,7 @@ const Nfts = () => {
 
   const { isError, isLoading, nfts } = useNftsState();
 
-  const { collections } = useSelector((state: RootState) => state.collections);
+  const { collections } = useSelector((state: RootState) => state?.collections);
 
   const [visibleCollections, setVisibleCollections] = useState(8);
 
@@ -26,8 +27,8 @@ const Nfts = () => {
   const contractChain = (contractAddress: string): string | undefined => {
     for (const col of collections) {
       for (const contract of col.contracts) {
-        if (contract.address === contractAddress) {
-          return contract.chain;
+        if (contract?.address === contractAddress) {
+          return contract?.chain;
         }
       }
     }
@@ -61,32 +62,45 @@ const Nfts = () => {
       <div className="flex justify-center items-center gap-4 flex-wrap">
         {displayedNfts?.map((nft, index) => (
           <Link
-            to={`/nft/${contractChain(nft.contract)}/${nft.contract}/${
-              nft.identifier
+            to={`/nft/${contractChain(nft?.contract)}/${nft?.contract}/${
+              nft?.identifier
             }`}
             key={index}
             className=" rounded-3xl overflow-hidden w-64 m-4 bg-secondry-bg-color"
           >
             <img
-              src={nft.display_image_url || LoaderImage}
-              alt={nft.name}
+              src={nft?.display_image_url || LoaderImage}
+              alt={nft?.name}
               className="object-center object-cover w-full h-60"
             />
             <div className="p-4">
               <p className="text-lg text-white mb-3 font-semibold">
-                {nft.name}
+                {nft?.name}
               </p>
-              <p className="text-sm text-white py-1">{nft.collection}</p>
-              <p className="text-sm text-gray-500">{nft.identifier}</p>
+              <p className="text-sm text-white py-1">{nft?.collection}</p>
+              <p className="text-sm text-gray-500">{nft?.identifier}</p>
             </div>
           </Link>
         ))}
       </div>
       <div className="flex items-center justify-center">
-        {visibleCollections && nfts && visibleCollections < nfts.length && (
+        {visibleCollections && nfts && visibleCollections < nfts?.length && (
           <button
             onClick={handleShowMore}
-            className="px-6 py-2 rounded-[12px] flex justify-center items-center gap-2 lg:text-base max-sm:text-[12px] bg-primary-btn-color font-semibold text-white my-8"
+            className="
+            px-6 
+            py-2 
+            rounded-[12px]
+            flex
+            justify-center
+            items-center
+            gap-2
+            lg:text-base
+            max-sm:text-[12px]
+          bg-primary-btn-color 
+            font-semibold
+          text-white 
+            my-8"
           >
             Show More
           </button>

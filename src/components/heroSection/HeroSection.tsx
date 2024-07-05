@@ -5,7 +5,7 @@ import { fetchCollections } from "../../redux/slices/CollectionsSlice";
 import Button from "../../components/button/Button";
 import Loader from "../loader/Loader";
 import { Link } from "react-router-dom";
-import rocket from "../../assets/icons/RocketLaunch.png";
+import rocket from "../../assets/icons/rocketLaunch.png";
 import LoaderImage from "../../assets/images/image.png";
 const HeroSection = () => {
   const dispatch: AppDispatch = useDispatch();

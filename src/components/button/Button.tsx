@@ -1,4 +1,4 @@
-import { ButtonProps } from "../../types/Types";
+import { ButtonProps } from "../../types/types";
 
 const Button: React.FC<ButtonProps> = ({
   img: src,
@@ -40,7 +40,7 @@ const Button: React.FC<ButtonProps> = ({
   `;
   return (
     <button onClick={onClick} className={buttonClasses} disabled>
-      <img src={src} alt={imgAlt} className="w-4 text-" />
+      <img src={src} alt={imgAlt} className="w-4 " />
       {Icon && <Icon size={25} color="white" />}
       <p className={textClasses}>{text}</p>
     </button>

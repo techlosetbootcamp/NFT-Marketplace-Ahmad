@@ -1,11 +1,11 @@
-import Art from "../assets/images/Art.png";
-import Collection from "../assets/images/Collections.png";
-import Music from "../assets/images/Music.png";
-import Photography from "../assets/images/Photography.png";
-import Sports from "../assets/images/Sports.png";
-import Utility from "../assets/images/Utility.png";
-import Video from "../assets/images/Video.png";
-import VirtualWorlds from "../assets/images/VirtualWorlds.png";
+import Art from "../assets/images/art.png";
+import Collection from "../assets/images/collections.png";
+import Music from "../assets/images/music.png";
+import Photography from "../assets/images/photography.png";
+import Sports from "../assets/images/sports.png";
+import Utility from "../assets/images/utility.png";
+import Video from "../assets/images/video.png";
+import VirtualWorlds from "../assets/images/virtualWorlds.png";
 
 export const categoryCardData = [
   { img: Art, imgAlt: "Art", title: "Art" },

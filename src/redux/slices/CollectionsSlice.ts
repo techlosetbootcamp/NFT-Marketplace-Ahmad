@@ -1,7 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axiosInstance from "../../axiosInstance";
-import { BASE_URL } from "../../axiosInstance";
-import { Collections, collectionSliceProps } from "../../types/Types";
+import axiosInstance from "../../utils/axiosInstance/axiosInstance";
+import { BASE_URL } from "../../utils/axiosInstance/axiosInstance";
+import { Collections, collectionSliceProps } from "../../types/types";
+const initialState: collectionSliceProps = {
+  collections: [],
+  isError: false,
+  isLoading: false,
+};
 
 export const fetchCollections = createAsyncThunk<Collections[]>(
   "collections/fetchCollections",
@@ -15,12 +20,6 @@ export const fetchCollections = createAsyncThunk<Collections[]>(
     );
   }
 );
-
-const initialState: collectionSliceProps = {
-  collections: [],
-  isError: false,
-  isLoading: false,
-};
 
 const collectionsSlice = createSlice({
   name: "collections",

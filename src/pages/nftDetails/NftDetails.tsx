@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
 import LoaderImage from "../../assets/images/image.png";
 import ImageLoader from "../../components/imageLoader/ImageLoader";
-import { useFetchNFTDetails, useNFTDetailsState } from "./UseNftDetalis";
+import { useFetchNFTDetails, useNFTDetailsState } from "./useNftDetalis";
 
 const NftDetails = () => {
   const { address, chain, id } = useParams<{

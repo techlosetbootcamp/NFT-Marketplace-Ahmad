@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Button from "../button/Button";
-import Eye from "../../assets/icons/Eye.png";
+import Eye from "../../assets/icons/eye.png";
 
 import { useState, useEffect } from "react";
 function Mashroom() {

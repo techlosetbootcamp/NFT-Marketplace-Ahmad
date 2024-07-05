@@ -6,7 +6,7 @@ import { IoEyeSharp } from "react-icons/io5";
 import {
   useCollectionsState,
   useFetchCollections,
-} from "../../pages/collections/UseCollections";
+} from "../../pages/collections/useCollections";
 
 const Collections = () => {
   const { collections, isError, isLoading } = useCollectionsState();

@@ -1,7 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axiosInstance, { BASE_URL } from "../../axiosInstance";
-import { NFTProps, initialStateProps } from "../../types/Types";
+import axiosInstance, {
+  BASE_URL,
+} from "../../utils/axiosInstance/axiosInstance";
+import { NFTProps, initialStateProps } from "../../types/types";
 
+const initialState: initialStateProps = {
+  nft: null,
+  isError: false,
+  isLoading: false,
+};
 export const fetchDetailsNFT = createAsyncThunk<
   NFTProps,
   { chain: string; address: string; id: string }
@@ -12,12 +19,6 @@ export const fetchDetailsNFT = createAsyncThunk<
 
   return response.data.nft;
 });
-
-const initialState: initialStateProps = {
-  nft: null,
-  isError: false,
-  isLoading: false,
-};
 
 const DetailPageSlice = createSlice({
   name: "DetailPage",

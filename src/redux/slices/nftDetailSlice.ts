@@ -1,7 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axiosInstance, { BASE_URL } from "../../axiosInstance";
-import { NFT, initialStatePropsNFTDetailSlice } from "../../types/Types";
+import axiosInstance, {
+  BASE_URL,
+} from "../../utils/axiosInstance/axiosInstance";
+import { NFT, initialStatePropsNFTDetailSlice } from "../../types/types";
 
+const initialState: initialStatePropsNFTDetailSlice = {
+  nfts: [],
+  isError: false,
+  isLoading: true,
+};
 export const fetchSingleCollection = createAsyncThunk<NFT[], string>(
   "singleCollecton",
   async (slug) => {
@@ -11,12 +18,6 @@ export const fetchSingleCollection = createAsyncThunk<NFT[], string>(
     return response.data.nfts;
   }
 );
-
-const initialState: initialStatePropsNFTDetailSlice = {
-  nfts: [],
-  isError: false,
-  isLoading: true,
-};
 
 const singleCollection = createSlice({
   name: "singleColletion",

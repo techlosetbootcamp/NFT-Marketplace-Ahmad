@@ -1,4 +1,4 @@
-import { CategoryCardProps } from "../../types/Types";
+import { CategoryCardProps } from "../../types/types";
 const CategoryCard: React.FC<CategoryCardProps> = ({ img, title, imgAlt }) => {
   return (
     <div className=" rounded-3xl mx-auto bg-secondry-bg-color">
