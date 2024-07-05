@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store";
-import { fetchDetailsNFT } from "../../redux/slices/DetailPageSlice";
+import { fetchDetailsNFT } from "../../redux/slices/detailPageSlice";
 
 export const useFetchNFTDetails = (
   address: string,

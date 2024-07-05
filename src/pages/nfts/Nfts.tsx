@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { fetchCollections } from "../../redux/slices/CollectionsSlice";
+import { fetchCollections } from "../../redux/slices/collectionsSlice";
 import Loader from "../../components/loader/Loader";
 import LoaderImage from "../../assets/images/image.png";
 import { useFetchNfts, useNftsState } from "./useNfts";

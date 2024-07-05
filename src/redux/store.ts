@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import collectionsReducer from "./slices/CollectionsSlice";
+import collectionsReducer from "./slices/collectionsSlice";
 import singleCollectionReducer from "./slices/nftDetailSlice";
-import nftDetailReducer from "./slices/DetailPageSlice";
+import nftDetailReducer from "./slices/detailPageSlice";
 export const store = configureStore({
   reducer: {
     collections: collectionsReducer,
