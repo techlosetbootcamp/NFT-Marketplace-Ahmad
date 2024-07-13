@@ -103,16 +103,16 @@ const HeroSection = () => {
           />
           <div className="pt-[20px] px-[20px] ">
             <h1 className="text-[22px] font-semibold  font-workSans text-white leading-[30px]">
-              {nft.name.slice(0, 20)}
+              {nft?.name.slice(0, 20)}
             </h1>
             <div className="flex items-center gap-4 py-4">
               <img
-                src={collection.image_url}
-                alt={collection.name}
+                src={collection?.image_url}
+                alt={collection?.name}
                 className="w-5 h-5 rounded-full"
               />
               <p className="text-white text-base font-workSans font-normal">
-                {collection.name}
+                {collection?.name}
               </p>
             </div>
           </div>
@@ -149,7 +149,7 @@ const HeroSection = () => {
         </div>
         <div className="md:flex justify-center hidden">
           <Link
-            to={`/collection/${collection.collection || "/"}`}
+            to={`/collection/${collection?.collection || "/"}`}
             className="max-h-[315px] max-w-[315px] w-full h-full rounded-[20px] bg-secondry-bg-color md:max-w-[330px] md:max-h-[330px] lg:max-w-[510px] lg:max-h-[510px]"
           >
             <img
@@ -159,16 +159,16 @@ const HeroSection = () => {
             />
             <div className="pt-[20px] px-[20px] ">
               <h1 className="text-[22px] font-semibold  font-workSans text-white leading-[30px]">
-                {nft.name.slice(0, 20)}
+                {nft?.name.slice(0, 20)}
               </h1>
               <div className="flex items-center gap-4 py-4">
                 <img
-                  src={collection.image_url}
-                  alt={collection.name}
+                  src={collection?.image_url}
+                  alt={collection?.name}
                   className="w-5 h-5 rounded-full"
                 />
                 <p className="text-white text-base font-workSans font-normal">
-                  {collection.name}
+                  {collection?.name}
                 </p>
               </div>
             </div>

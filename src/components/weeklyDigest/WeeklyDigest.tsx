@@ -1,7 +1,7 @@
 import { message } from "../../constants/image";
 const WeeklyDigest = () => {
   return (
-    <div className=" py-[40px] max-w-[1280px] mx-auto px-[30px] md:py-[80px] lg:px-[110px] md:px-[40px] ">
+    <div className="  max-w-[1280px] mx-auto px-[30px]  lg:px-[110px] md:px-[40px] ">
       {""}
       <div className="md:bg-secondry-bg-color text-white flex md:items-center md:flex-row flex-col items-center  justify-between md:gap-[60px] rounded-[20px] md:px-[40px] md:py-[30px] lg:p-[60px]">
         <div className=" ">

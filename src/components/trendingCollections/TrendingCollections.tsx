@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
 import LoaderImage from "../../assets/images/image.png";
-import { one, two } from "../../constants/image";
+import { nft, one, two } from "../../constants/image";
 import { IoEyeSharp } from "react-icons/io5";
 import {
   useCollectionsState,
@@ -57,19 +57,29 @@ const Collections = () => {
               className="rounded-[20px] bg-cover  my-4 md:w-[330px] md:h-[330px] h-[315px]"
             />
             <div className="flex   gap-[15px]">
-              <img
-                className=" md:w-[100px] md:h-[100px] w-[95px] h-[95px] rounded-[20px]"
-                src={one || LoaderImage}
-                alt="img"
-              />
-              <img
-                className=" md:w-[100px] md:h-[100px] w-[95px] h-[95px]"
-                src={two || LoaderImage}
-                alt="img"
-              />
-              <span className=" md:w-[100px] md:h-[100px] w-[95px] h-[95px] rounded-[20px] flex items-center md:text-[22px] text-base font-spaceMono font-bold justify-center text-white bg-primary-btn-color">
-                1025+
-              </span>
+              <div>
+                <img
+                  className=" md:w-[100px] md:h-[100px] w-[95px] h-[95px] rounded-[20px]"
+                  src={one || LoaderImage}
+                  alt="img"
+                />
+              </div>
+
+              <div>
+                <img
+                  className=" md:w-[100px] md:h-[100px] w-[95px] h-[95px]"
+                  src={two || LoaderImage}
+                  alt="img"
+                />
+              </div>
+
+              <div>
+                <img
+                  src={nft}
+                  alt="More nfts"
+                  className="md:w-[100px] md:h-[100px] w-[95px] h-[95px]"
+                />
+              </div>
             </div>
             <div className="py-2">
               <h1 className=" text-[22px] text-white py-3 leading-[31px] font-semibold">
@@ -77,12 +87,12 @@ const Collections = () => {
               </h1>
               <span className=" flex items-center gap-[12px] ">
                 <img
-                  src={collection.image_url || LoaderImage}
-                  alt={collection.name}
+                  src={collection?.image_url || LoaderImage}
+                  alt={collection?.name}
                   className="w-[24px] h-[24px] rounded-full"
                 />
                 <p className="font-workSans font-normal leading-[22px] text-base text-white">
-                  {collection.name}
+                  {collection?.name}
                 </p>
               </span>
             </div>

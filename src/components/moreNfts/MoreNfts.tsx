@@ -71,28 +71,28 @@ const MoreNfts = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-center">
         <NftCard
-          nftSrc={nft1.display_image_url}
-          nftAlt={nft1.name}
-          nftName={nft1.name}
-          collectionAlt={collection1.name}
-          collectionName={collection1.name}
-          collectionSrc={collection1.image_url}
+          nftSrc={nft1?.display_image_url}
+          nftAlt={nft1?.name}
+          nftName={nft1?.name}
+          collectionAlt={collection1?.name}
+          collectionName={collection1?.name}
+          collectionSrc={collection1?.image_url}
         />
         <NftCard
-          nftSrc={nft2.display_image_url}
-          nftAlt={nft2.name}
-          nftName={nft2.name}
-          collectionAlt={collection2.name}
-          collectionName={collection2.name}
-          collectionSrc={collection2.image_url}
+          nftSrc={nft2?.display_image_url}
+          nftAlt={nft2?.name}
+          nftName={nft2?.name}
+          collectionAlt={collection2?.name}
+          collectionName={collection2?.name}
+          collectionSrc={collection2?.image_url}
         />
         <NftCard
-          nftSrc={nft3.display_image_url}
-          nftAlt={nft3.name}
-          nftName={nft3.name}
-          collectionAlt={collection3.name}
-          collectionName={collection3.name}
-          collectionSrc={collection3.image_url}
+          nftSrc={nft3?.display_image_url}
+          nftAlt={nft3?.name}
+          nftName={nft3?.name}
+          collectionAlt={collection3?.name}
+          collectionName={collection3?.name}
+          collectionSrc={collection3?.image_url}
         />
       </div>
     </div>

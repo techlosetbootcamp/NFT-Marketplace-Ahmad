@@ -14,16 +14,16 @@ const Home = () => {
       <TrendingCollections />
 
       <div className=" py-[40px] max-w-[1280px] mx-auto px-[30px] md:py-[80px] lg:px-[110px] md:px-[40px]">
-        <h1 className="text-white font-bold text-4xl mb-[70px]">
+        <h1 className="text-white font-semibold lg:text-[38px] text-[28px]  mb-[70px]">
           Browse Categories
         </h1>
         <div className="grid gap-[20px] md:gap-[30px] justify-center grid-cols-2 md:grid-cols-4 mx-auto">
           {categoryCardData.map((card, index) => (
             <CategoryCard
               key={index}
-              img={card.img}
-              imgAlt={card.imgAlt}
-              title={card.title}
+              img={card?.img}
+              imgAlt={card?.imgAlt}
+              title={card?.title}
             />
           ))}
         </div>

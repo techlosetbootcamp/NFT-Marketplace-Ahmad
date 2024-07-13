@@ -9,6 +9,7 @@ import rocket from "../assets/svg/RocketLaunch.svg";
 import shormie from "../assets/svg/shoormie.svg";
 import logo from "../assets/svg/Logo.svg";
 import message from "../assets/svg/EnvelopeSimple.svg";
+import nft from "../assets/svg/additionals.svg";
 export {
   one,
   two,
@@ -21,4 +22,5 @@ export {
   shormie,
   logo,
   message,
+  nft,
 };
