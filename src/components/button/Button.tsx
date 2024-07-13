@@ -11,13 +11,16 @@ const Button: React.FC<ButtonProps> = ({
   bgTransparent,
   widthFull,
   widthFit,
+  width100,
   icon: Icon,
   onClick,
 }) => {
   const buttonClasses = `
-           px-6
-           py-2
-           rounded-[12px]
+           px-[12px]
+           py-[30px]
+           w-[152px]
+           h-[60px]
+           rounded-[20px]
            flex
            justify-center
            items-center
@@ -26,7 +29,8 @@ const Button: React.FC<ButtonProps> = ({
            max-sm:text-[12px]
            cursor-not-allowed
           ${bgPurple ? "bg-primary-btn-color" : ""}
-          ${widthFull ? "w-full" : ""}
+          ${widthFull ? "w-[244px]" : ""}
+          ${width100 ? "w-full text-[16px]" : ""}
           ${widthFit ? "w-fit" : ""}
           ${bgTransparent ? "bg-transparent" : ""}
           ${bgWhite ? "bg-white" : ""}
@@ -40,8 +44,8 @@ const Button: React.FC<ButtonProps> = ({
   `;
   return (
     <button onClick={onClick} className={buttonClasses} disabled>
-      <img src={src} alt={imgAlt} className="w-4 " />
-      {Icon && <Icon size={25} color="white" />}
+      <img src={src} alt={imgAlt} className="w-[20px] " />
+      {Icon && <Icon size={20} color="purlpe" />}
       <p className={textClasses}>{text}</p>
     </button>
   );

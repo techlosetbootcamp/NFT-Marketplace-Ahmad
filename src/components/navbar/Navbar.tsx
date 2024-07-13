@@ -10,37 +10,52 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed z-[100] w-full top-0 bg-primary-bg-color shadow-lg">
-        <div className=" px-3 py-4 flex items-center justify-between ">
-          <div>
+      <div className="md-tablet:h-[100px]   h-[54px] z-[100] w-full top-0 bg-primary-bg-color ">
+        <div className=" px-[30px] py-[15px]    md-tablet:py-[20px] flex items-center justify-between ">
+          <div className="">
             <Link to={"/"}>
               <img
-                className="sm:[50px]   md:block md:w-[170px] lg:w-[240px]"
+                className="w-[183px]   tablet:block tablet:w-[170px] md-tablet:w-[243px] "
                 src={logo}
                 alt="logo"
               />
             </Link>
           </div>
-          <div className="hidden md:flex justify-center items-center gap-8">
-            <span className="text-white font-semibold">
-              <Link to={"/collections"}>Collections</Link>
+          <div className="tablet:hidden md:flex justify-center items-center 1020:gap:[22px] gap-[11px]">
+            <span>
+              <Link
+                className="text-white flex-shrink h-[46px] px-[10px] font-spaceMono py-[20px] text-base font-semibold"
+                to={"/collections"}
+              >
+                Collections
+              </Link>
             </span>
-            <span className="text-white font-semibold cursor-not-allowed">
-              Rankings
+            <span>
+              <Link
+                to={"#"}
+                className="text-white flex-shrink h-[46px] px-[10px] py-[20px] font-spaceMono text-base font-semibold"
+              >
+                Rankings
+              </Link>
             </span>
-            <span className="text-white font-semibold cursor-not-allowed">
-              Connect a wallet
+            <span>
+              <Link
+                to={"#"}
+                className="text-white  h-[46px] px-[10px] py-[20px] font-spaceMono text-base font-semibold"
+              >
+                Connect a wallet
+              </Link>
             </span>
+
             <Button
               img={userLogo}
               text="Sign up"
               imgAlt="user"
               bgPurple
               border
-              widthFit
             />
           </div>
-          <div onClick={() => setNav(!nav)} className="md:hidden">
+          <div onClick={() => setNav(!nav)} className="md:hidden tablet:block">
             {!nav ? (
               <HiMenuAlt3 color="white" size={30} />
             ) : (
@@ -52,8 +67,8 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "fixed md:hidden  top-0 left-0 bg-dark-bg-color w-[70%] h-screen duration-1000 z-20"
-              : "fixed md:hidden z-[100] top-0 left-[-100%] bg-dark-bg-color w-[70%] h-screen duration-1000"
+              ? "fixed md:hidden  top-0 left-0 bg-dark-bg-color w-[50%] h-[200vh] duration-1000 z-20"
+              : "fixed md:hidden z-[100] top-0 left-[-100%] h-[200vh] bg-dark-bg-color w-[70%]  duration-1000"
           }
         >
           <div className=" px-4 py-2 h-screen">

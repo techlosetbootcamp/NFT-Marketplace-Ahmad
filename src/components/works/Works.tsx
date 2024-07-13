@@ -2,16 +2,17 @@ import WorkCard from "../workcard/WorkCard";
 import Wallet from "../../assets/images/wallet.png";
 import Collection from "../../assets/images/collection.png";
 import Earning from "../../assets/images/earning.png";
+
 const Getstarted = () => {
   return (
-    <div className="sm:px-12 px-4 py-20">
-      <h1 className="text-4xl  md:text-5xl font-bold text-white ">
+    <div className="py-10 max-w-[1280px] mx-auto px-[30px] md:py-20 lg:px-28 md:px-10">
+      <h1 className="font-workSans text-[28px] lg:text-[38px] font-semibold text-white">
         How it works
       </h1>
-      <p className="text-sm md:text-xl text-white font-semibold py-4 ">
+      <p className="lg:text-[22px] text-base text-white font-normal font-workSans md:py-3 ">
         Find out how to get started
       </p>
-      <div className="flex flex-wrap items-center justify-between">
+      <div className="flex justify-between gap-[20px] md:gap-[30px] flex-col md:flex-row  my-4">
         <WorkCard
           src={Wallet}
           alt="Wallet"

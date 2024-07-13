@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
 import LoaderImage from "../../assets/images/image.png";
+import { one, two } from "../../constants/image";
 import { IoEyeSharp } from "react-icons/io5";
 import {
   useCollectionsState,
@@ -10,7 +11,7 @@ import {
 
 const Collections = () => {
   const { collections, isError, isLoading } = useCollectionsState();
-  const [visibleCollections, setVisibleCollections] = useState(8);
+  const [visibleCollections, setVisibleCollections] = useState(3);
 
   useFetchCollections();
 
@@ -27,45 +28,68 @@ const Collections = () => {
   }
 
   const handleShowMore = () => {
-    setVisibleCollections(visibleCollections + 8);
+    setVisibleCollections(visibleCollections + 3);
   };
 
   const displayedCollections = collections.slice(0, visibleCollections);
 
   return (
-    <div className="">
-      <div className="px-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mt-16">
+    <div className=" py-[40px] max-w-[1280px] mx-auto px-[30px] md:py-[80px] lg:px-[110px] md:px-[40px]">
+      <div className="py-6">
+        <h1 className="font-workSans font-semibold text-[28px] lg:text-[48px] py-2 leading-[40px] lg:leading-[45px] text-white">
           Trending Collections
         </h1>
-        <p className="text-sm md:text-xl text-white font-semibold py-4 mb-10">
+        <p className="font-workSans text-base font-normal leading-[22px] text-white">
           Checkout our weekly updated trending collection.
         </p>
       </div>
-      <div className="flex flex-col items-center">
-        <div className="flex justify-center items-center gap-4 flex-wrap">
-          {displayedCollections.map((collection, index) => (
-            <Link
-              to={`/collection/${collection?.collection}`}
-              key={index}
-              className="overflow-hidden w-64 m-4"
-            >
+
+      <div className="grid gap-[30px] lg:grid-cols-3 md:grid-cols-2 justify-center items-center ">
+        {displayedCollections.map((collection, index) => (
+          <Link
+            to={`/collection/${collection?.collection}`}
+            key={index}
+            className="md:max-w-[330px] md:max-h-[525px] max-w-[315px] max-h-[505px]  rounded-[40px]"
+          >
+            <img
+              src={collection?.image_url || LoaderImage}
+              alt={collection?.name}
+              className="rounded-[20px] bg-cover  my-4 md:w-[330px] md:h-[330px] h-[315px]"
+            />
+            <div className="flex   gap-[15px]">
               <img
-                src={collection?.image_url || LoaderImage}
-                alt={collection?.name}
-                className="object-center object-cover rounded-3xl w-full h-64"
+                className=" md:w-[100px] md:h-[100px] w-[95px] h-[95px] rounded-[20px]"
+                src={one || LoaderImage}
+                alt="img"
               />
-              <div className="p-4">
-                <h1 className="text-xl text-white font-semibold mb-2">
-                  {collection?.name}
-                </h1>
-                <span className="text-primary-btn-color text-sm hover:underline">
-                  View Collection
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
+              <img
+                className=" md:w-[100px] md:h-[100px] w-[95px] h-[95px]"
+                src={two || LoaderImage}
+                alt="img"
+              />
+              <span className=" md:w-[100px] md:h-[100px] w-[95px] h-[95px] rounded-[20px] flex items-center md:text-[22px] text-base font-spaceMono font-bold justify-center text-white bg-primary-btn-color">
+                1025+
+              </span>
+            </div>
+            <div className="py-2">
+              <h1 className=" text-[22px] text-white py-3 leading-[31px] font-semibold">
+                {collection?.name}
+              </h1>
+              <span className=" flex items-center gap-[12px] ">
+                <img
+                  src={collection.image_url || LoaderImage}
+                  alt={collection.name}
+                  className="w-[24px] h-[24px] rounded-full"
+                />
+                <p className="font-workSans font-normal leading-[22px] text-base text-white">
+                  {collection.name}
+                </p>
+              </span>
+            </div>
+          </Link>
+        ))}
+      </div>
+      <div className="flex items-center justify-center mt-10">
         {visibleCollections < collections?.length && (
           <button
             onClick={handleShowMore}

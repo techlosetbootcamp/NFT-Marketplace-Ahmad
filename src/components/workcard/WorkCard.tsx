@@ -7,14 +7,20 @@ const WorkCard: React.FC<WorkCardProps> = ({
   description,
 }) => {
   return (
-    <div className="bg-secondry-bg-color text-center sm:w-[300px] w-full rounded-2xl flex items-center flex-row sm:flex-col my-4 gap-4 p-4 ">
-      <img src={src} alt={alt} className="w-24 sm:w-full" />
-      <h1 className="sm:text-2xl text-xl font-semibold text-white pb-2">
-        {title}
-      </h1>
-      <p className="sm:text-base text-sm font-normal text-white py-2">
-        {description}
-      </p>
+    <div className="gap-[30px]  bg-secondry-bg-color text-center lg:w-[330px] md:w-[210px] w-full rounded-2xl flex md:items-center items-start justify-start md:flex-col my-4 p-[20px]">
+      <img
+        src={src}
+        alt={alt}
+        className="w-24 h-24 lg:w-[250px] lg:h-[250px] md:w-[160px] md:h-[160px] mb-4"
+      />
+      <div>
+        <h1 className="text-base md:text-base lg:text-[22px] font-workSans md:text-center text-left font-semibold text-white mb-2">
+          {title}
+        </h1>
+        <p className="text-xs md:text-center text-left lg:text-base  font-workSans font-normal text-white">
+          {description}
+        </p>
+      </div>
     </div>
   );
 };

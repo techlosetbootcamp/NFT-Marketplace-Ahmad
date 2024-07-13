@@ -5,6 +5,7 @@ import Getstarted from "../../components/works/Works";
 import WeeklyDigest from "../../components/weeklyDigest/WeeklyDigest";
 import CategoryCard from "../../components/categoryCard/CategoryCard";
 import { categoryCardData } from "../../constants/categoryCardData";
+import MoreNfts from "../../components/moreNfts/MoreNfts";
 
 const Home = () => {
   return (
@@ -12,11 +13,11 @@ const Home = () => {
       <HeroSection />
       <TrendingCollections />
 
-      <div className="px-12 my-16">
-        <h1 className="text-white font-bold text-4xl mb-16">
+      <div className=" py-[40px] max-w-[1280px] mx-auto px-[30px] md:py-[80px] lg:px-[110px] md:px-[40px]">
+        <h1 className="text-white font-bold text-4xl mb-[70px]">
           Browse Categories
         </h1>
-        <div className="flex gap-10 flex-wrap justify-between items-center">
+        <div className="grid gap-[20px] md:gap-[30px] justify-center grid-cols-2 md:grid-cols-4 mx-auto">
           {categoryCardData.map((card, index) => (
             <CategoryCard
               key={index}
@@ -27,14 +28,12 @@ const Home = () => {
           ))}
         </div>
       </div>
-
+      <MoreNfts />
       <Mashroom />
 
       <Getstarted />
 
-      <div className="px-12 my-10">
-        <WeeklyDigest />
-      </div>
+      <WeeklyDigest />
     </div>
   );
 };

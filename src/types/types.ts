@@ -12,6 +12,7 @@ export type ButtonProps = {
   bgTransparent?: boolean;
   widthFull?: boolean;
   widthFit?: boolean;
+  width100?: boolean;
   onClick?: () => void;
 };
 
@@ -81,4 +82,13 @@ export type initialStatePropsNFTDetailSlice = {
   nfts: NFT[];
   isLoading: boolean;
   isError: boolean;
+};
+
+export type NftCardProps = {
+  nftSrc: string;
+  nftAlt: string;
+  nftName: string;
+  collectionSrc: string;
+  collectionAlt: string;
+  collectionName: string;
 };

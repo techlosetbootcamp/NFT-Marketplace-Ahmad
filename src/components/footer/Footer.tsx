@@ -1,64 +1,75 @@
-import React from "react";
 import { FaLinkedin, FaTwitter, FaDiscord, FaYoutube } from "react-icons/fa";
-import Button from "../button/Button";
-import logo from "../../assets/icons/logo.png";
-import envelope from "../../assets/icons/envelope.png";
+
+import { logo, message } from "../../constants/image";
 
 const Footer: React.FC = () => {
   return (
-    <div className=" w-full h-full z-10 px-4 py-8 bg-dark-bg-color">
-      <div className="flex flex-col md:flex-row md:items-start md:gap-4 md:justify-between">
-        <div className="mb-6 md:mb-0 md:w-1/3">
-          <img src={logo} alt="logo" className="w-[200px]" />
-          <ul className="py-4 text-light">
-            <li className="py-2">
-              NFT marketplace fetched API's of Opensea and show on here
-            </li>
-            <li className="py-2">Join our community</li>
-            <li className="py-2 flex gap-4">
-              <FaYoutube size={25} />
-              <FaDiscord size={25} />
-              <FaLinkedin size={25} />
-              <FaTwitter size={25} />
-            </li>
-          </ul>
+    <div className="py-10 max-w-screen-xl  lg:px-[110px] md:px-[40px] mx-auto px-[30px] md:py-[80px]  bg-secondary-bg-color">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 ">
+        <div className="flex flex-col items-start gap-5">
+          <img src={logo} alt="logo" className="" />
+          <p className="text-light text-base font-normal font-workSans">
+            NFT marketplace UI created with Anima for Figma
+          </p>
+          <p className="text-light text-base font-normal font-workSans">
+            Join our Community
+          </p>
+          <div className="flex gap-3 text-light">
+            <FaYoutube size={25} />
+            <FaDiscord size={25} />
+            <FaLinkedin size={25} />
+            <FaTwitter size={25} />
+          </div>
         </div>
 
-        <div className="mb-6 md:mb-0 md:w-1/3">
-          <h1 className="text-white font-semibold text-[22px]">Explore</h1>
-          <ul className="py-4 text-light">
-            <li className="py-2">Marketplace</li>
-            <li className="py-2">Rankings</li>
-            <li className="py-2">Connect a wallet</li>
-          </ul>
+        <div className="flex flex-col lg:mx-auto items-start gap-5">
+          <h2 className="font-spaceMono font-bold text-2xl text-white">
+            Explore
+          </h2>
+          <p className="text-light text-base font-normal font-workSans">
+            Marketplace
+          </p>
+          <p className="text-light text-base font-normal font-workSans">
+            Rankings
+          </p>
+          <p className="text-light text-base font-normal font-workSans">
+            Connect a wallet
+          </p>
         </div>
 
-        <div className="md:w-1/3">
-          <h1 className="text-white font-semibold text-[22px]">
+        <div className="flex flex-col items-start gap-5">
+          <h2 className="font-spaceMono font-bold text-2xl text-white">
             Join our weekly digest
-          </h1>
-          <ul className="py-4 text-light">
-            <li className="py-2">
-              Get exclusive promotions & updates straight to your inbox.
-            </li>
-            <li className="my-2 py-2 text-center bg-white w-full rounded-xl">
-              Enter your email
-            </li>
-            <li className="py-2">
-              <Button
-                text="Subscribe"
-                img={envelope}
-                imgAlt="email"
-                bgPurple
-                widthFull
-              />
-            </li>
-          </ul>
+          </h2>
+          <p className="text-light text-base font-normal font-workSans">
+            Get exclusive promotions & updates straight to your inbox.
+          </p>
+          <div className="hidden items-center lg:w-full w-fit md:flex bg-white rounded-[20px]">
+            <input
+              type="email"
+              placeholder="Enter Your Email"
+              className="w-full px-5 py-3 border-0 rounded-l-2xl text-base font-workSans"
+            />
+            <button className="px-8 py-3 bg-primary-btn-color rounded-[20px] text-white rounded-r-2xl font-normal text-base font-workSans">
+              Subscribe
+            </button>
+          </div>
+
+          <input
+            type="email"
+            placeholder="Enter Your Email"
+            className="w-full block  md:hidden px-5 py-4 border-0 rounded-[20px] text-base font-workSans"
+          />
+          <button className="px-8 py-4 flex items-center justify-center gap-2  md:hidden bg-primary-btn-color rounded-[20px] text-white w-full rounded-r-2xl font-normal text-base font-workSans">
+            <img src={message} alt="message" /> Subscribe
+          </button>
         </div>
       </div>
-      <div className="w-full border-t border-white rounded-full mt-6" />
-      <div className="mt-4 text-light text-center">
-        &copy; Techloset Coding Bootcamp 6.O Created by Ahmad Raza
+      <div>
+        <div className="w-full border-t-2 border-white rounded-full mt-6" />
+        <div className="mt-4 text-light text-left">
+          &copy; Techloset Coding Bootcamp 6.O Created by Ahmad Raza
+        </div>
       </div>
     </div>
   );
